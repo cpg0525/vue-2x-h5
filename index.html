@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta name="apple-mobile-web-app-title" content="" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="baidu-tc-cerfication" content="" />
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <style>
+   @-webkit-keyframes bounce{0%,100%{transform:scale(0.0)}50%{transform:scale(1.0)}}@keyframes bounce{0%,100%{transform:scale(0.0)}50%{transform:scale(1.0)}}.loading-wrapper{position:absolute;box-sizing:border-box;left:50%;top:50%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-flow:column nowrap;flex-flow:column nowrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-transform:translate3d(-50%,-50%,0);transform:translate3d(-50%,-50%,0)}.loading-dsc{margin-top:4vw;color:#FFF;font-size:4vw;text-align:center}.loading-container{position:fixed;left:0;right:0;top:0;bottom:0;background-color:rgba(0,0,0,.8);box-sizing:border-box;z-index:11}.loading-bounce{min-width:15vw;min-height:15vw;position:relative}.bounce{width:100%;height:100%;border-radius:50%;background-color:#67CF22;opacity:0.6;position:absolute;top:0;left:0;-webkit-animation:bounce 2.0s infinite ease-in-out;-moz-animation:bounce 2.0s infinite ease-in-out;-o-animation:bounce 2.0s infinite ease-in-out;animation:bounce 2.0s infinite ease-in-out}.loading-bounce div:last-child{-webkit-animation-delay:-1.0s;-moz-animation-delay:-1.0s;-o-animation-delay:-1.0s;animation-delay:-1.0s}
+  </style>
+    <script>var u=navigator.userAgent;var isMobile=!!u.match(/AppleWebKit.*Mobile.*/);if(!isMobile)window.location.href='https://wwww.baidu.com';var scale=1/window.devicePixelRatio,viewport=document.querySelector('meta[name="viewport"]');viewport||((viewport=document.createElement("meta")).setAttribute("name","viewport"),window.document.head.appendChild(viewport)),viewport.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+scale+",maximum-scale="+scale+",minimum-scale="+scale);</script><!--<script>!function(i,e){var t,n=document.documentElement,o=navigator.userAgent,a=function(){var e=(n.getBoundingClientRect().width||320)/37.5;e=20<e?20:e,n.style.fontSize=e+"px";var t=parseFloat(i.getComputedStyle(n).getPropertyValue("font-size"));t===e||(e+=e-t,n.style.fontSize=e+"px",i.fontSize=e)};i.addEventListener("resize",function(){clearTimeout(t),t=setTimeout(a,100)},!1),i.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(t),t=setTimeout(a,100))},!1),a()}(window)</script>-->
+</head>
+
+<body>
+  <!-- built files will be auto injected -->
+  <div id=app><div class=loading-container><div class=loading-wrapper><div class=loading-bounce><div class=bounce></div><div class=bounce></div></div><div class=loading-dsc>正在加载中…</div></div></div></div>
+</body>
+</html>
