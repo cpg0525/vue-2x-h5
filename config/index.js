@@ -1,31 +1,22 @@
-'use strict'
+"use strict";
 // Template version: 1.3.1
 // see http://vuejs-templates.github.io/webpack for documentation.
 
-const path = require('path');
-const config = require('./env-config');
-const env = process.env.NODE_ENV;
-const targetURL = config[env].baseURL;
+const path = require("path");
+const config = require("../vue.config.js");
+const { proxyTable, host = "localhost", port = 8080 } = config;
 
 module.exports = {
   dev: {
-    env: require('./dev.env'),
+    env: require("./dev.env"),
     // Paths
-    assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
-    proxyTable: {
-      "/api": {
-        target: "https://mktm.10101111.com",
-        changeOrigin: true,
-        pathRewrite: {  // localhost:8080/api ----> 代理服务器地址/
-          '^/api': '/' 
-        }
-      }
-    },
+    assetsSubDirectory: "static",
+    assetsPublicPath: "/",
+    proxyTable,
 
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    host, // can be overwritten by process.env.HOST
+    port, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     inline: true,
     progress: true,
     autoOpenBrowser: false,
@@ -47,7 +38,7 @@ module.exports = {
      */
 
     // https://webpack.js.org/configuration/devtool/#development
-    devtool: 'cheap-module-eval-source-map',
+    devtool: "cheap-module-eval-source-map",
 
     // If you have problems debugging vue-files in devtools,
     // set this to false - it *may* help
@@ -58,15 +49,15 @@ module.exports = {
   },
 
   build: {
-    env: require('./prod.env'),
+    env: require("./prod.env"),
     // Template for index.html
-    index: path.resolve(__dirname, '../dist/index.html'),
+    index: path.resolve(__dirname, "../dist/index.html"),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
+    assetsRoot: path.resolve(__dirname, "../dist"),
+    assetsSubDirectory: "static",
     assetsPublicPath: "/",
-    dllOutput: path.resolve(__dirname, '../dll'),
+    dllOutput: path.resolve(__dirname, "../dll"),
     /**
      * Source Maps
      */
@@ -77,7 +68,7 @@ module.exports = {
     // Before setting to `true`, make sure to:
     // npm install --save-dev compression-webpack-plugin
     productionGzip: false,
-    productionGzipExtensions: ['js', 'css'],
+    productionGzipExtensions: ["js", "css"],
 
     // Run the build command with an extra argument to
     // View the bundle analyzer report after build finishes:
@@ -85,4 +76,4 @@ module.exports = {
     // Set to `true` or `false` to always turn it on or off
     bundleAnalyzerReport: process.env.npm_config_report
   }
-}
+};

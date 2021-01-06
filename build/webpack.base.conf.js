@@ -8,6 +8,8 @@ const PostCompilePlugin = require("webpack-post-compile-plugin");
 const TransformModulesPlugin = require("webpack-transform-modules-plugin");
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 const smp = new SpeedMeasurePlugin();
+const conf = require('../vue.config.js');
+const { externals = {}, alias = {} } = conf;
 function resolve(dir) {
   return path.join(__dirname, "..", dir);
 }
@@ -54,16 +56,13 @@ module.exports = smp.wrap({
         ? config.build.assetsPublicPath
         : config.dev.assetsPublicPath
   },
-  // externals : {
-  //   vue: 'Vue',
-  //   vuex: 'Vuex'
-  // },
+  externals,
   resolve: {
     extensions: [".js", ".vue", ".json", ".scss"],
     alias: {
       vue$: "vue/dist/vue.esm.js",
       "@": resolve("src"),
-      assets: resolve("src/assets")
+      ...alias
     }
   },
   module: {

@@ -12,7 +12,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const OptimizeCSSPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
-const env = require("../config/env-config");
+const conf = require('../vue.config.js');
+const { env = {}, title = 'vue移动端通用框架' } = conf;
 
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -68,7 +69,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
-      title: "vue移动端通用框架",
+      title,
       filename: config.build.index,
       template: "index.html",
       inject: true,
